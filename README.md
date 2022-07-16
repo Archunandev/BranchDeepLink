@@ -14,10 +14,10 @@ Sample guide for integrating Branch deeplink in kotlin language.
     //Add when you using SDK.(Required)
 
     dependencies { implementation 'io.branch.sdk.android:library:5.+'(Now in 5.0.15) }
+[***Check new version***](https://help.branch.io/developers-hub/docs/android-version-history)
 
-    [***Check new version***](https://help.branch.io/developers-hub/docs/android-version-history)
 ## 1.1 Branch Dashboard Setup
-    a. [***Sign up***]() the branch dashboard 
+[***Sign up***]() the branch dashboard
 
     Need SHA256 Cert Fingerprints
 
