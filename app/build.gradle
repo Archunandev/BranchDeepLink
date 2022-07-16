@@ -54,7 +54,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     // init branch
-    implementation 'io.branch.sdk.android:library:5.0.15'
+    implementation 'io.branch.sdk.android:library:5.2.0'
 
     // Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
