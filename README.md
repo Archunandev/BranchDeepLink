@@ -65,7 +65,7 @@ Sample guide for integrating Branch deeplink in kotlin language.
         Branch.enableTestMode()
     }
 
-    #Step 3: Launcher activity add the below code inn start method
+    #Step 3: Launcher activity add the below code in on start method
         > override fun onStart() {
         super.onStart()
         Branch.sessionBuilder(this).withCallback(object : Branch.BranchReferralInitListener {
@@ -78,6 +78,45 @@ Sample guide for integrating Branch deeplink in kotlin language.
             }
         }).withData(this.intent.data).init()
     }
+
+    #Now we succesfully initialized the branch SDK also check the integrationn status
+
+## 1.3 Create DeepLink
+        > Branch UniversalObject hold the some data.so we can initialize it anywere and call the object.
+        val buo = BranchUniversalObject()
+        .setCanonicalIdentifier("content/12345")
+        .setTitle("My Content Title")
+        .setContentDescription("My Content Description")
+        .setContentImageUrl("https://lorempixel.com/400/400")
+        .setContentIndexingMode(BranchUniversalObject.CONTENT_INDEX_MODE.PUBLIC)
+        .setLocalIndexMode(BranchUniversalObject.CONTENT_INDEX_MODE.PUBLIC)
+        .setContentMetadata(ContentMetadata().addCustomMetadata("key1", "value1"))
+
+        > LinkProperties we customize the link.
+        al lp = LinkProperties()
+        .setChannel("facebook")
+        .setFeature("sharing")
+        .setCampaign("content 123 launch")
+        .setStage("new user")
+        .addControlParameter("$desktop_url", "http://example.com/home")
+        .addControlParameter("custom", "data")
+        .addControlParameter("custom_random", Long.toString(Calendar.getInstance().getTimeInMillis()))
+
+        > Branch provide the dialog sheet
+          val ss = ShareSheetStyle(this@MainActivity, "Check this out!", "This stuff is awesome: ")
+        .addPreferredSharingOption(SharingHelper.SHARE_WITH.FACEBOOK)
+        .addPreferredSharingOption(SharingHelper.SHARE_WITH.EMAIL)
+        .addPreferredSharingOption(SharingHelper.SHARE_WITH.MESSAGE)
+        .addPreferredSharingOption(SharingHelper.SHARE_WITH.HANGOUT)
+        .setAsFullWidthStyle(true)
+        .setSharingTitle("Share With")
+
+        buo.showShareSheet(this, lp, ss, object : Branch.BranchLinkShareListener {
+        override fun onShareLinkDialogLaunched() {}
+        override fun onShareLinkDialogDismissed() {}
+        override fun onLinkShareResponse(sharedLink: String?, sharedChannel: String?, error: BranchError?) {}
+        override fun onChannelSelected(channelName: String) {}
+         })
 
 
         
