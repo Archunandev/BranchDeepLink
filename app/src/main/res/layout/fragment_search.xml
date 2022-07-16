@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragment.SearchFragment">
+
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/discoverSearch"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginEnd="18dp"
+            android:paddingLeft="12dp"
+            android:drawablePadding="12dp"
+            android:drawableStart="@drawable/ic_search"
+            android:drawableTint="@color/white"
+            android:hint="@string/search"
+            android:background="@drawable/search_bg"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="18sp"
+            android:visibility="visible" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="22dp"
+        android:gravity="center"
+        android:text="Welcome to Search Screen"
+        android:textAlignment="center"
+        android:textColor="@color/purple_500"
+        android:textSize="28sp" />
+
+</FrameLayout>
