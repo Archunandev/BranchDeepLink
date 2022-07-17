@@ -42,30 +42,32 @@ c.Click Integration Status
 ## 1.2 Initialize Branch
 > Step 1 : Manifest file add the below code in launcher activity.
 ```XML
-         <activity
-            android:name=".ui.activity.DashboardActivity"
-            android:exported="true">
+    <activity 
+        android:name=".ui.activity.DashboardActivity"
+        android:exported="true">
             <intent-filter>
                 <data android:host="open" android:scheme="samplebranchdeeplink" />
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
             </intent-filter>
-            </activity>
+    </activity>
+
         <meta-data android:name="io.branch.sdk.BranchKey" android:value="key_live_kaFuWw8WvY7yn1d9yYiP8gokwqjV0Sw" />
         <meta-data android:name="io.branch.sdk.BranchKey.test" android:value="key_test_hlxrWC5Zx16DkYmWu4AHiimdqugRYMr" />
         <meta-data android:name="io.branch.sdk.TestMode" android:value="false" />
+
         </application>
+
         <queries>
         <intent>
             <action android:name="android.intent.action.SEND" />
             <data android:mimeType="text/plain" />
         </intent>
     </queries>
-        }
 ```
 
-> Step 2: Applicationn class add the below code
+> Step 2: Application class add the below code
 
 ```kotlin
         @override fun onCreate() {
