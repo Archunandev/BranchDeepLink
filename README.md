@@ -17,9 +17,9 @@ Sample guide for integrating Branch deeplink in kotlin language.
 [***Check New Version***](https://help.branch.io/developers-hub/docs/android-version-history)
 
 ## 1.1 Branch Dashboard Setup
-[***Sign Up***](https://dashboard.branch.io/) the branch dashboard and create a app
+[***Sign Up***](https://dashboard.branch.io/) the branch dashboard and create a app.
 
-    a.Click Configuration page to setup the android redirects.
+a.Click Configuration page to setup the android redirects.
         > Uri Sheme (https://)
         > when your app published on playstore add the link othervice add custom url.
         > Declare package name
@@ -27,16 +27,17 @@ Sample guide for integrating Branch deeplink in kotlin language.
         > Enable app link
         > Link Domain option -- you shound customize the link(this is your manifest host name)
 
-    b.Click Account Settings
+b.Click Account Settings
         > You can get the branch live and test key
 
-    c.Click Integration Status
+c.Click Integration Status
         > New version update
         > This is show the progress of our setup process.
         > When you integerate check the ststus.
 
 ## 1.2 Initialize Branch
-    #Step 1 : Manifest file add the below code in launcher activity.
+#Step 1 : Manifest file add the below code in launcher activity.
+```XML
          <activity
             android:name=".ui.activity.DashboardActivity"
             android:exported="true">
@@ -57,16 +58,22 @@ Sample guide for integrating Branch deeplink in kotlin language.
             <data android:mimeType="text/plain" />
         </intent>
     </queries>
+        }
+```
 
-    #Step 2: Applicationn class add the below code
-        > override fun onCreate() {
+#Step 2: Applicationn class add the below code
+
+```kotlin
+        @override fun onCreate() {
         super.onCreate()
         val branch = Branch.getAutoInstance(this)
         Branch.enableTestMode()
-    }
+        }
+```
 
-    #Step 3: Launcher activity add the below code in on start method
-        > override fun onStart() {
+#Step 3: Launcher activity add the below code in on start method
+```kotlin
+        @override fun onStart() {
         super.onStart()
         Branch.sessionBuilder(this).withCallback(object : Branch.BranchReferralInitListener {
             override fun onInitFinished(referringParams: JSONObject?, error: BranchError?) {
@@ -78,8 +85,8 @@ Sample guide for integrating Branch deeplink in kotlin language.
             }
         }).withData(this.intent.data).init()
     }
-
-    #Now we succesfully initialized the branch SDK also check the integrationn status
+```
+#Now we succesfully initialized the branch SDK also check the integrationn status
 
 ## 1.3 Create DeepLink
         > Branch UniversalObject hold the some data.so we can initialize it anywere and call the object.
