@@ -40,7 +40,7 @@ c.Click Integration Status
         > When you integerate check the ststus.
 
 ## 1.2 Initialize Branch
-####Step 1 : Manifest file add the below code in launcher activity.
+#####Step 1 : Manifest file add the below code in launcher activity.
 ```XML
          <activity
             android:name=".ui.activity.DashboardActivity"
@@ -65,7 +65,7 @@ c.Click Integration Status
         }
 ```
 
-####Step 2: Applicationn class add the below code
+#####Step 2: Applicationn class add the below code
 
 ```kotlin
         @override fun onCreate() {
@@ -75,7 +75,7 @@ c.Click Integration Status
         }
 ```
 
-####Step 3: Launcher activity add the below code in on start method
+#####Step 3: Launcher activity add the below code in onstart method
 ```kotlin
         @override fun onStart() {
         super.onStart()
@@ -90,10 +90,11 @@ c.Click Integration Status
         }).withData(this.intent.data).init()
     }
 ```
-####Now we succesfully initialized the branch SDK also check the integration status
+#####Now we succesfully initialized the branch SDK also check the integration status
 
 ## 1.3 Create DeepLink
-        > Branch UniversalObject hold the some data.so we can initialize it anywere and call the object.
+Branch UniversalObject hold the some data. so we can initialize it anywere and call the object.
+```kotlin
         val buo = BranchUniversalObject()
         .setCanonicalIdentifier("content/12345")
         .setTitle("My Content Title")
@@ -102,9 +103,10 @@ c.Click Integration Status
         .setContentIndexingMode(BranchUniversalObject.CONTENT_INDEX_MODE.PUBLIC)
         .setLocalIndexMode(BranchUniversalObject.CONTENT_INDEX_MODE.PUBLIC)
         .setContentMetadata(ContentMetadata().addCustomMetadata("key1", "value1"))
-
-        > LinkProperties we customize the link.
-        al lp = LinkProperties()
+```
+LinkProperties we customize the link.
+```kotlin
+        val lp = LinkProperties()
         .setChannel("facebook")
         .setFeature("sharing")
         .setCampaign("content 123 launch")
@@ -112,8 +114,10 @@ c.Click Integration Status
         .addControlParameter("$desktop_url", "http://example.com/home")
         .addControlParameter("custom", "data")
         .addControlParameter("custom_random", Long.toString(Calendar.getInstance().getTimeInMillis()))
+```
 
-        > Branch provide the dialog sheet
+> Branch provide the dialog sheet
+```kotlin
           val ss = ShareSheetStyle(this@MainActivity, "Check this out!", "This stuff is awesome: ")
         .addPreferredSharingOption(SharingHelper.SHARE_WITH.FACEBOOK)
         .addPreferredSharingOption(SharingHelper.SHARE_WITH.EMAIL)
@@ -128,7 +132,7 @@ c.Click Integration Status
         override fun onLinkShareResponse(sharedLink: String?, sharedChannel: String?, error: BranchError?) {}
         override fun onChannelSelected(channelName: String) {}
          })
-
+```
 
         
 
