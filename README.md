@@ -40,7 +40,7 @@ c.Click Integration Status
         > When you integerate check the ststus.
 
 ## 1.2 Initialize Branch
-#####Step 1 : Manifest file add the below code in launcher activity.
+> Step 1 : Manifest file add the below code in launcher activity.
 ```XML
          <activity
             android:name=".ui.activity.DashboardActivity"
@@ -65,7 +65,7 @@ c.Click Integration Status
         }
 ```
 
-#####Step 2: Applicationn class add the below code
+> Step 2: Applicationn class add the below code
 
 ```kotlin
         @override fun onCreate() {
@@ -75,7 +75,7 @@ c.Click Integration Status
         }
 ```
 
-#####Step 3: Launcher activity add the below code in onstart method
+> Step 3: Launcher activity add the below code in onstart method
 ```kotlin
         @override fun onStart() {
         super.onStart()
@@ -90,10 +90,10 @@ c.Click Integration Status
         }).withData(this.intent.data).init()
     }
 ```
-#####Now we succesfully initialized the branch SDK also check the integration status
+> Now we succesfully initialized the branch SDK also check the integration status
 
 ## 1.3 Create DeepLink
-Branch UniversalObject hold the some data. so we can initialize it anywere and call the object.
+> Branch UniversalObject hold the some data. so we can initialize it anywere and call the object.
 ```kotlin
         val buo = BranchUniversalObject()
         .setCanonicalIdentifier("content/12345")
@@ -104,7 +104,7 @@ Branch UniversalObject hold the some data. so we can initialize it anywere and c
         .setLocalIndexMode(BranchUniversalObject.CONTENT_INDEX_MODE.PUBLIC)
         .setContentMetadata(ContentMetadata().addCustomMetadata("key1", "value1"))
 ```
-LinkProperties we customize the link.
+> LinkProperties we customize the link.
 ```kotlin
         val lp = LinkProperties()
         .setChannel("facebook")
