@@ -1,6 +1,5 @@
 # BranchDeepLink <img src="https://user-images.githubusercontent.com/56442417/180644117-c35cc232-7aee-4736-88c7-9c1b317d0850.png" width="50" height="50" />
 Sample guide for integrating Branch deeplink in kotlin language.
- <img src="https://user-images.githubusercontent.com/56442417/180644569-3e79ae4d-0345-4046-a7b4-40ff75bcbe27.png" width="100" height="50" />
 
     You can add the branch deeplink in two options
     
@@ -8,7 +7,7 @@ Sample guide for integrating Branch deeplink in kotlin language.
                OR
         2.Using Branch Api(Funtional api in development)
 
-## 1.Branch SDK Integration Guide
+## 1.Branch SDK Integration Guide <img src="https://user-images.githubusercontent.com/56442417/180644569-3e79ae4d-0345-4046-a7b4-40ff75bcbe27.png" width="100" height="50" />
     SDK Size: 187kb
     Speed: Median 80ms to 250ms
     Minimum OS Version: API Level 21+
