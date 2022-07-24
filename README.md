@@ -1,4 +1,4 @@
-# BranchDeepLink ![branchround](https://user-images.githubusercontent.com/56442417/180644117-c35cc232-7aee-4736-88c7-9c1b317d0850.png)
+# BranchDeepLink <img src="https://user-images.githubusercontent.com/56442417/180644117-c35cc232-7aee-4736-88c7-9c1b317d0850.png" data-canonical-src=https://user-images.githubusercontent.com/56442417/180644117-c35cc232-7aee-4736-88c7-9c1b317d0850.png" width="200" height="200" />
 Sample guide for integrating Branch deeplink in kotlin language.
 
 ## How to Start?
