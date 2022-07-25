@@ -138,9 +138,11 @@ c.Click Integration Status
 ```
 
 ## @Want to learn more?
+
   > Ask me about deepLink....
   <img src="https://user-images.githubusercontent.com/56442417/180780766-c6e51e3a-a587-4d79-91dc-c18c21dd026c.png"  height="250" />
-  > [***Branch University***](https://university.branch.io/) you learn here more...
+  OR
+  [***Branch University***](https://university.branch.io/) you learn here more...
 
 
 
