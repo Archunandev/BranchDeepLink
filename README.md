@@ -1,5 +1,5 @@
 # BranchDeepLink <img src="https://user-images.githubusercontent.com/56442417/180644117-c35cc232-7aee-4736-88c7-9c1b317d0850.png" width="50" height="50" />
-<img src="https://user-images.githubusercontent.com/56442417/180749017-76cc234d-b43c-4dbd-b8ae-b5ad006d72e5.png"/>
+<img src="https://user-images.githubusercontent.com/56442417/180749017-76cc234d-b43c-4dbd-b8ae-b5ad006d72e5.png" width="300" height="300"/>
 Sample guide for integrating Branch deeplink in kotlin language.
 
     You can add the branch deeplink in two options
